@@ -6,4 +6,9 @@ window.addEventListener('load', () => {
 
   
   // iteration - 2: add key listeners to the game
+
+  document.addEventListener('keyup', (event) => {
+    game.onKeyEvent(event);
+  })
 });
+

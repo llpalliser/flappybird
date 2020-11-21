@@ -27,7 +27,3 @@ body * {
   flex-direction: column;
   height: 100%;
 }
-
-#canvas-game {
-  background-image: url('../img/game-bg.png')
-}

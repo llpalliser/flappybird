@@ -13,8 +13,9 @@ class Game {
 
     this.background= new Background(this.ctx);
 
-
     // iteration 2: setup the flappy
+
+    this.flappy = new FlappyBird(this.ctx, 70, 250);
 
     // iteration 2: setup the flappy
 
@@ -28,6 +29,7 @@ class Game {
 
   onKeyEvent(event) {
     // iteration 2: link flappy key events
+    this.flappy.onKeyEvent(event);
   }
 
   start() {
@@ -65,6 +67,7 @@ class Game {
       this.background.move();
 
     // Iteration 2: move the flappy
+      this.flappy.move();
     // Iteration 3: move the pipes
   }
 
@@ -91,6 +94,8 @@ class Game {
 
   
     // Iteration 2: draw the flappy
+
+    this.flappy.draw();
     // Iteration 2: draw the pipes
     // Bonus: draw the score
   }

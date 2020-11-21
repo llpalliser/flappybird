@@ -9,6 +9,9 @@ class Background {
     this.w = this.ctx.canvas.width;
     this.vx = -2;
 
+    this.hfooter = this.h * 0.2;
+    this.yfooter = this.h - this.hfooter
+
 
 
     this.bgImg = new Image();
@@ -40,7 +43,7 @@ class Background {
 
   draw() {
     if (this.bgImg.isReady && this.footerImg.isReady) {
-      
+      /*
       this.ctx.drawImage(
         this.bgImg,
         this.x,
@@ -55,25 +58,23 @@ class Background {
         this.y,
         this.w,
         this.h
-      );
+      ); */
 
       this.ctx.drawImage(
         this.footerImg,
         this.x,
-        this.y,
+        this.yfooter,
         this.w,
-        this.h
+        this.hfooter
       );
 
       this.ctx.drawImage(
         this.footerImg,
         this.x + this.w,
-        this.y,
+        this.yfooter,
         this.w,
-        this.h
+        this.hfooter
       );
-
-      
 
       
     }
@@ -81,6 +82,12 @@ class Background {
 
   move() {
     // move the ground
+
+    this.x += this.vx;
+    
+    if (this.x + this.w <=0) {
+      this.x = 0;
+    }
 
     // check bounds
   }

@@ -9,7 +9,9 @@ class Game {
     this.drawIntervalId = undefined;
     this.fps = 1000 / 60;
 
-    // iteration 1: setup the backgound
+    // iteration 1: setup the background
+
+    this.background= new Background(this.ctx);
 
 
     // iteration 2: setup the flappy
@@ -84,6 +86,10 @@ class Game {
 
   draw() {
     // Iteration 1: draw the background
+
+    this.background.draw();
+
+  
     // Iteration 2: draw the flappy
     // Iteration 2: draw the pipes
     // Bonus: draw the score

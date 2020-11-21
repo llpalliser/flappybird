@@ -11,6 +11,7 @@ class Game {
 
     // iteration 1: setup the backgound
 
+
     // iteration 2: setup the flappy
 
     // iteration 2: setup the flappy
@@ -29,10 +30,19 @@ class Game {
 
   start() {
     // Iteration 1: each 60f clear - move - draw - [next iterations: addPipes - checkCollisions - checkScore]
+    if (!this.drawIntervalId) {
+      this.drawIntervalId = setInterval(() => {
+        this.clear();
+        this.move();
+        this.draw();
+       this.checkCollisions(); 
+      }, this.fps)
+    }
   }
 
   stop() {
-    // Iteration 1: stop the game
+    clearInterval(this.drawIntervalId);
+    this.drawIntervalId = undefined;
   }
 
   restart() {
@@ -44,11 +54,14 @@ class Game {
   }
 
   clear() {
-    // Iteration 1: clean the screen
+   this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
+
   }
 
   move() {
     // Iteration 1: move the background
+      this.background.move();
+
     // Iteration 2: move the flappy
     // Iteration 3: move the pipes
   }
